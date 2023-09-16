@@ -1,0 +1,106 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
+  color: #A6FF0A;
+  margin: 0;
+}
+
+h1, h4 {
+  color: #A6FF0A;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header styles */
+header {
+  background-color: #000;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-icon {
+  cursor: pointer;
+}
+
+.menu-icon .bar {
+  width: 30px;
+  height: 3px;
+  background-color: #A6FF0A;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* Sidebar styles */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -250px;
+  background-color: #A6FF0A;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar.active {
+  width: 250px;
+  left: 0;
+}
+
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #A6FF0A;
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* Main content styles */
+main {
+  padding: 20px;
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

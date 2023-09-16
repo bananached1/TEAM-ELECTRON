@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ELECTRON</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="menu-icon" onclick="toggleSidebar()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <h1>ELECTRON</h1>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+
+  <div class="sidebar" id="mySidebar">
+    <a href="#"><big>Home</big></a>
+    <a href="Aboutus.html">About Us</a>
+    <a href="#"><big>Sponsorship</big></a>
+    <a href="#"><big>Contact</big></a>
+    <span class="closebtn" onclick="closeSidebar()">&times;</span>
+  </div>
+
+  <main>
+    <div class="content">
+      <img src="Untitled.jpg" alt="Website Image" height="350px">
+      <h4>Welcome to ELECTRON</h4>
+      <p>This is my website. Explore and discover more!</p>
+    </div>
+  </main>
+
+  <script>
+  function toggleSidebar() {
+    var sidebar = document.getElementById("mySidebar");
+    sidebar.classList.toggle("active");
+  }
+
+  function closeSidebar() {
+    var sidebar = document.getElementById("mySidebar");
+    sidebar.classList.remove("active");
+  }
+
+  // Add an event listener to the overlay
+  var overlay = document.getElementById("overlay");
+  overlay.addEventListener("click", function(event) {
+    if (event.target === overlay) {
+      closeSidebar(); // Close the sidebar only when clicking on the overlay itself
+    }
+  });
+
+  // Add an event listener to the document body to close the sidebar when clicking anywhere else
+  document.body.addEventListener("click", function(event) {
+    var sidebar = document.getElementById("mySidebar");
+    if (!event.target.closest(".sidebar") && !event.target.classList.contains("menu-icon")) {
+      sidebar.classList.remove("active");
+    }
+  });
+</script>
+</body>
+
+</html>
